@@ -4,6 +4,7 @@
   "description": "Dummy customer management application",
   "main": "app/lib/bootstrap.js",
   "scripts": {
+    "postinstall": "./node_modules/.bin/jspm install",
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "node ./bin/serve.js"
   },
@@ -36,6 +37,12 @@
       "packages": "app/vendor"
     },
     "configFile": "app/config.system.js",
+    "dependencies": {
+      "angular": "github:angular/bower-angular@^1.4.6",
+      "angular-mocks": "github:angular/bower-angular-mocks@^1.4.6",
+      "angular-ui-router": "github:angular-ui/ui-router@^0.2.15",
+      "css": "github:systemjs/plugin-css@^0.1.18"
+    },
     "devDependencies": {
       "babel": "npm:babel-core@^5.8.24",
       "babel-runtime": "npm:babel-runtime@^5.8.24",

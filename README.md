@@ -1,2 +1,6 @@
-# cm
-Dummy customer management application
+# CM - Customer Management
+
+> CM is an application based on angularJS framework
+
+ 
+
