@@ -4,17 +4,23 @@
     <meta charset=UTF-8>
     <meta name=viewport content="width=device-width, initial-scale=1.0">
     <title>Customer Management</title>
-    <link href=style.css rel=stylesheet>
+    <link rel="stylesheet" href="styles/loader.css">
 </head>
-<body class=hide>
+<body class=splash>
+    <div class="loader">
+        <div class="inner one"></div>
+        <div class="inner two"></div>
+        <div class="inner three"></div>
+    </div>
+
     <ui-view></ui-view>
     <script src=vendor/system.js></script>
     <script src=config.system.js></script>
     <script>
         (function(global, System, undefined) {
-            System.import('lib/bootstrap.js')
+            System.import('lib/index.js')
                 .then(function(m) {
-                    console.debug('App running...');
+                    m.bootstrap();
                 })
                 .catch(function(e) {
                     console.debug(e);
