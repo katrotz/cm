@@ -1,0 +1,45 @@
+{
+  "name": "cm",
+  "version": "0.0.1",
+  "description": "Dummy customer management application",
+  "main": "app/lib/bootstrap.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "node ./bin/serve.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/katrotz/cm.git"
+  },
+  "keywords": [
+    "customer",
+    "management",
+    "demo"
+  ],
+  "author": {
+    "name": "Veaceslav Cotruta",
+    "email": "katrotz@gmail.com",
+    "url": "http://katrotz.space"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/katrotz/cm/issues"
+  },
+  "homepage": "https://github.com/katrotz/cm#readme",
+  "devDependencies": {
+    "jspm": "^0.16.10",
+    "live-server": "^0.8.1"
+  },
+  "jspm": {
+    "directories": {
+      "baseURL": "app",
+      "packages": "app/vendor"
+    },
+    "configFile": "app/config.system.js",
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <meta charset=UTF-8>
+    <meta name=viewport content="width=device-width, initial-scale=1.0">
+    <title>Customer Management</title>
+    <link href=style.css rel=stylesheet>
+</head>
+<body class=hide>
+    <ui-view></ui-view>
+    <script src=vendor/system.js></script>
+    <script src=config.system.js></script>
+    <script>
+        (function(global, System, undefined) {
+            System.import('lib/bootstrap.js')
+                .then(function(m) {
+                    console.debug('App running...');
+                })
+                .catch(function(e) {
+                    console.debug(e);
+                });
+        })(window, window.System);
+    </script>
+</body>
+</html>
