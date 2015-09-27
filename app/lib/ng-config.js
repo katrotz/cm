@@ -23,7 +23,8 @@ export var states = {
     url: '/',
     views: {
       'main@app': {
-        controller: 'HomeController'
+        controller: 'HomeController',
+        controllerAs: 'homeCtrl',
       }
     }
   },
@@ -32,6 +33,7 @@ export var states = {
     views: {
       'main@app': {
         controller: 'CustomerController',
+        controllerAs: 'customerCtrl',
         templateUrl: 'lib/views/pages/customer.html'
       }
     },
@@ -42,6 +44,7 @@ export var states = {
   'app.customer.create': {
     url: '/create',
     controller: 'CustomerCreateController',
+    controllerAs: 'createCtrl',
     templateUrl: 'lib/views/modals/customer.create.html',
     data: {
       title: 'Customer create'
@@ -58,6 +61,7 @@ export var states = {
   'app.customer.list': {
     url: '/list',
     controller: 'CustomerListController',
+    controllerAs: 'listCtrl',
     templateUrl: 'lib/views/pages/customer.list.html',
     data: {
       title: 'Customers overview'
@@ -66,6 +70,7 @@ export var states = {
   'app.customer.navi': {
     url: '/analytics/:id',
     controller: 'CustomerNaviController',
+    controllerAs: 'naviCtrl',
     templateUrl: 'lib/views/pages/customer.navi.html',
     data: {
       title: 'Customer analytics'

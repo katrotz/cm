@@ -1,9 +1,9 @@
 'use strict';
 
-import Database from './Database.js';
+import Storage from './Storage.js';
 
 export default function register(ngApplication) {
   return ngApplication
-    .service('database', Database)
+    .service('storage', Storage)
   ;
 }

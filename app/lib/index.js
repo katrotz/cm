@@ -8,7 +8,7 @@ export function bootstrap() {
   return new Promise((resolve) => {
     angular.element(document).ready(() => {
       try {
-        angular.bootstrap(document, [ngApplication.name], {strictDi: true});
+        angular.bootstrap(document, [ngApplication.name], {strictDi: false});
       } catch(e) {
         document.body.innerHTML = '<pre>' + e.stack + '</pre>';
       } finally {
