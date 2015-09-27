@@ -1,9 +1,6 @@
 /*Keep it lite*/
-body.splash {
-    background-image: radial-gradient(circle farthest-corner at center, #3C4B57 0%, #1C262B 100%);
-}
-
 .loader {
+    z-index: 9999999;
     position: absolute;
     top: calc(50% - 32px);
     left: calc(50% - 32px);
@@ -28,10 +25,6 @@ body.splash {
     border-bottom: 3px solid #dedede;
 }
 
-body.splash .loader .inner.one {
-    border-bottom-color: #EFEFFA;
-}
-
 .loader .inner.two {
     right: 0%;
     top: 0%;
@@ -39,19 +32,11 @@ body.splash .loader .inner.one {
     border-right: 3px solid #dedede;
 }
 
-body.splash .loader .inner.two {
-    border-right-color: #EFEFFA;
-}
-
 .loader .inner.three {
     right: 0%;
     bottom: 0%;
     animation: rotate-three 1s linear infinite;
     border-top: 3px solid #dedede;
-}
-
-body.splash .loader .inner.three {
-    border-top-color: #EFEFFA;
 }
 
 @keyframes rotate-one {

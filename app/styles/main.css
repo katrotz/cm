@@ -1,0 +1,65 @@
+html, body, .wrapper{
+    height: 100%
+}
+
+body{
+    background: #f0eddf;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+header .logo{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 800;
+    color: #000;
+}
+
+header nav li a {
+    color: #000;
+    font-weight: 600;
+}
+
+header nav li a:active,
+header nav li a:hover,
+header nav li a:focus{
+    color: rgba(143,188,19,1);
+    background-color: #f0eddf !important;
+}
+
+main{
+    min-height: 200px;
+}
+
+.footer-inner-container{
+    margin: 30px 0 30px 0;
+}
+
+footer{
+    background: #111111;
+}
+
+footer .category-header {
+    color: rgba(143,188,19,1);
+}
+
+footer .category-txt{
+    color: #fff;
+}
+
+footer a{
+    font-weight: 200;
+    color: rgba(255,255,255,0.8);
+}
+
+footer a:focus,
+footer a:hover,
+footer a:active{
+    color: rgba(143,188,19,1);
+    text-decoration: none;
+}
+
+footer ul{
+    list-style: none;
+    text-indent: 0px;
+    padding: 0px;
+    margin: 0px;
+}

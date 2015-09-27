@@ -16,13 +16,18 @@ System.config({
   map: {
     "angular": "github:angular/bower-angular@1.4.6",
     "angular-bootstrap": "github:angular-ui/bootstrap-bower@0.13.4",
+    "angular-data-table": "github:Swimlane/angular-data-table@0.3.18",
     "angular-mocks": "github:angular/bower-angular-mocks@1.4.6",
     "angular-ui-router": "github:angular-ui/ui-router@0.2.15",
     "babel": "npm:babel-core@5.8.25",
     "babel-runtime": "npm:babel-runtime@5.8.25",
+    "bootstrap": "github:twbs/bootstrap@3.3.5",
     "core-js": "npm:core-js@1.1.4",
     "css": "github:systemjs/plugin-css@0.1.18",
     "dfahlander/Dexie.js": "github:dfahlander/Dexie.js@1.2.0",
+    "github:Swimlane/angular-data-table@0.3.18": {
+      "angular": "npm:angular@1.4.6"
+    },
     "github:angular-ui/ui-router@0.2.15": {
       "angular": "github:angular/bower-angular@1.4.6"
     },
@@ -31,6 +36,12 @@ System.config({
     },
     "github:jspm/nodelibs-process@0.1.1": {
       "process": "npm:process@0.10.1"
+    },
+    "github:twbs/bootstrap@3.3.5": {
+      "jquery": "github:components/jquery@2.1.4"
+    },
+    "npm:angular@1.4.6": {
+      "process": "github:jspm/nodelibs-process@0.1.1"
     },
     "npm:babel-runtime@5.8.25": {
       "process": "github:jspm/nodelibs-process@0.1.1"

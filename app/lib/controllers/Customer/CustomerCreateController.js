@@ -2,10 +2,12 @@
 
 export default class CustomerCreateController{
   static get $inject() {
-    return [];
+    return [
+      'database'
+    ];
   }
 
-  constructor() {
-
+  constructor(database) {
+    console.log(database);
   }
 }

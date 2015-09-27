@@ -1,26 +1,40 @@
 <!DOCTYPE html>
 <html lang=en>
 <head>
+    <title>Customer Management</title>
     <meta charset=UTF-8>
     <meta name=viewport content="width=device-width, initial-scale=1.0">
-    <title>Customer Management</title>
-    <link rel="stylesheet" href="styles/loader.css">
+    <link href=/styles/loader.css rel=stylesheet type=text/css>
+    <link href=/vendor/github/twbs/bootstrap@3.3.5/css/bootstrap.min.css rel=stylesheet type=text/css>
+    <link href=https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,700,900 rel=stylesheet type=text/css>
 </head>
-<body class=splash>
-    <div class="loader">
+<body>
+    <div id="loader" class="loader hide">
         <div class="inner one"></div>
         <div class="inner two"></div>
         <div class="inner three"></div>
     </div>
 
-    <ui-view></ui-view>
+    <base href="/">
+
+    <ui-view name=layout></ui-view>
+
     <script src=vendor/system.js></script>
     <script src=config.system.js></script>
     <script>
         (function(global, System, undefined) {
+            /*Splash screen*/
+            document.querySelector('#loader').classList.remove('hide');
+
+            /*Import application*/
             System.import('lib/index.js')
                 .then(function(m) {
-                    m.bootstrap();
+                    System.import('styles/main.css!');
+
+                    m.bootstrap().then(function() {
+                        /*Splash screen*/
+                        document.querySelector('#loader').classList.add('hide');
+                    });
                 })
                 .catch(function(e) {
                     console.debug(e);

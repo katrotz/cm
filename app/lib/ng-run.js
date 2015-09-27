@@ -1,5 +1,6 @@
 'use strict';
 
-export default [function run() {
-  console.log('Angular application running');
+export default ['$rootScope', '$state', function run($rootScope, $state) {
+  $rootScope.$state = $state;
+  //$rootScope.$on('$stateChangeStart', function stateChangeStart(event, fromState, toState) {});
 }];
