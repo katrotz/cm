@@ -1,0 +1,83 @@
+<div class=row>
+    <div class="col-lg-6 col-lg-offset-0">
+        <form name=customerEdit ng-submit=editCtrl.save(customerEdit) class=material>
+            <div class="form-group">
+                <label for=CustomerID>Customer ID</label>
+                <input type=text id=CustomerID class=form-control name=CustomerID ng-model=editCtrl.customer.CustomerID
+                       disabled>
+            </div>
+
+            <div class="form-group">
+                <label for=FirstName>First Name</label>
+                <input type=text id=FirstName class=form-control name=FirstName ng-model=editCtrl.customer.FirstName
+                    ng-required=true>
+                <div ng-show="customerEdit.$submitted || customerEdit.FirstName.$touched" class=error-wrapper>
+                    <span ng-show=customerEdit.FirstName.$error.required>Value is required and can not be empty</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for=LastName>Last Name</label>
+                <input type=text id=LastName class=form-control name=LastName ng-model=editCtrl.customer.LastName
+                       ng-required=true>
+                <div ng-show="customerEdit.$submitted || customerEdit.LastName.$touched" class=error-wrapper>
+                    <span ng-show=customerEdit.LastName.$error.required>Value is required and can not be empty</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for=Birthday>Birthday</label>
+                <input type=text id=Birthday class=form-control name=Birthday ng-model=editCtrl.customer.Birthday
+                       datepicker-popup="yyyy-MM-dd" is-open=birthdayIsOpen ng-click="birthdayIsOpen=true" show-button-bar=false
+                       ng-required=true>
+                <div ng-show="customerEdit.$submitted || customerEdit.Birthday.$touched" class=error-wrapper>
+                    <span ng-show=customerEdit.Birthday.$error.required>Value is required and can not be empty</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for=Gender>Gender</label>
+                <select class="form-control" id=Gender name=Gender ng-model=editCtrl.customer.Gender ng-required=true>
+                    <option value=m>Male</option>
+                    <option value=w>Female</option>
+                </select>
+                <div ng-show="customerEdit.$submitted || customerEdit.Gender.$touched" class=error-wrapper>
+                    <span ng-show=customerEdit.Gender.$error.required>Value is required and can not be empty</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for=LastContact>Last Contact</label>
+                <input type=text id=LastContact class=form-control name=LastContact ng-model=editCtrl.customer.LastContact
+                        datepicker-popup="yyyy-MM-dd" is-open=lastContactIsOpen ng-click="lastContactIsOpen=true" show-button-bar=false
+                        ng-required=true>
+                <div ng-show="customerEdit.$submitted || customerEdit.LastContact.$touched" class=error-wrapper>
+                    <span ng-show=customerEdit.LastContact.$error.required>Value is required and can not be empty</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for=CustomerLifetimeValue>Lifetime Value</label>
+                <input type=text id=CustomerLifetimeValue class=form-control name=CustomerLifetimeValue
+                       ng-model=editCtrl.customer.CustomerLifetimeValue ng-required=true>
+                <div ng-show="customerEdit.$submitted || customerEdit.CustomerLifetimeValue.$touched" class=error-wrapper>
+                    <span ng-show=customerEdit.CustomerLifetimeValue.$error.required>Value is required and can not be empty</span>
+                </div>
+            </div>
+
+            <div class=footer>
+                <div class=btn-toolbar>
+                    <button class="btn btn-primary" type=submit>
+                        <i class="glyphicon glyphicon-ok" ng-show=!editCtrl.busy></i>
+                        <i class="glyphicon glyphicon-cog spinning" ng-show=editCtrl.busy></i>
+                        Save
+                    </button>
+
+
+                    <button class="btn btn-primary" ui-sref=app.customer.list>Cancel</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>

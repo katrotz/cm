@@ -2,11 +2,13 @@
   "name": "cm",
   "version": "0.0.1",
   "description": "Dummy customer management application",
-  "main": "app/lib/bootstrap.js",
+  "main": "app/src/index.js",
   "scripts": {
     "postinstall": "./node_modules/.bin/jspm install",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "node ./bin/serve.js"
+    "serve": "npm run unbuild && node ./bin/serve.js",
+    "build": "./node_modules/.bin/jspm bundle lib/index app/dist/lib.min.js --inject",
+    "unbuild": "./node_modules/.bin/jspm unbundle"
   },
   "repository": {
     "type": "git",
@@ -42,10 +44,13 @@
       "angular-bootstrap": "github:angular-ui/bootstrap-bower@^0.13.4",
       "angular-data-table": "github:Swimlane/angular-data-table@^0.3.18",
       "angular-mocks": "github:angular/bower-angular-mocks@^1.4.6",
+      "angular-sanitize": "github:angular/bower-angular-sanitize@^1.4.6",
       "angular-ui-router": "github:angular-ui/ui-router@^0.2.15",
       "bootstrap": "github:twbs/bootstrap@^3.3.5",
+      "clean-css": "npm:clean-css@^3.4.5",
       "css": "github:systemjs/plugin-css@^0.1.18",
-      "dfahlander/Dexie.js": "github:dfahlander/Dexie.js@^1.2.0"
+      "dfahlander/Dexie.js": "github:dfahlander/Dexie.js@^1.2.0",
+      "text": "github:systemjs/plugin-text@^0.0.2"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.8.24",

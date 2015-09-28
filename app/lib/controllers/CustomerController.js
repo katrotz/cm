@@ -1,5 +1,7 @@
 'use strict';
 
+import createCustomerTpl from 'lib/views/modals/customer.create.html!text';
+
 export default class CustomerController{
   static get $inject() {
     return ['$scope', '$modal', 'storage'];
@@ -22,7 +24,11 @@ export default class CustomerController{
   }
 
   showCreateCustomerModal() {
-    console.log('Show modal');
+    this.$modal.open({
+      template: createCustomerTpl,
+      controller: 'CustomerCreateController',
+      controllerAs: 'createCtrl'
+    });
   }
 
   deleteCustomer(id) {

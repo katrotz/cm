@@ -17,6 +17,36 @@ export default class Storage{
     return this.adapter_;
   }
 
+  get(tblName, key) {
+    return this.$q((resolve, reject) => {
+      return this.adapter_.table(tblName).get(key).then(resolve, reject);
+    });
+  }
+
+  put(tblName, value) {
+    return this.$q((resolve, reject) => {
+
+      let clone = this.adapter_.constructor.deepClone(value);
+      if (typeof clone.$$hashKey !== 'undefined') {
+        delete(clone.$$hashKey);
+      }
+
+      return this.adapter_.table(tblName).put(clone).then((...args) => {
+        this.$rootScope.$broadcast('MODIFY::' + tblName.toUpperCase(), args[0]);
+        return resolve.call(null, ...args);
+      }, reject);
+    });
+  }
+
+  add(tblName, value) {
+    return this.$q((resolve, reject) => {
+      return this.adapter_.table(tblName).add(value).then((...args) => {
+        this.$rootScope.$broadcast('CREATE::' + tblName.toUpperCase(), args[0]);
+        return resolve.call(null, ...args);
+      }, reject);
+    });
+  }
+
   list(tblName) {
     return this.$q((resolve, reject) => {
       this.adapter_.table(tblName).toArray()

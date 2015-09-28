@@ -14,7 +14,7 @@ var tableDefinition = [
   },
   {
     name: 'analytics',
-    schema: 'CustomerID++,Pages',
+    schema: 'Id++,CustomerID,Pages',
     fixtures: customerAnalyticsFixtures
   }
 ];

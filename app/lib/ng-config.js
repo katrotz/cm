@@ -1,18 +1,27 @@
 'use strict';
 
+import appLayoutTpl from './views/layouts/default.html!text';
+import appHeaderTpl from './views/components/header.html!text';
+import appFooterTpl from './views/components/footer.html!text';
+import appCustomerTpl from './views/pages/customer.html!text';
+import appCustomerEditTpl from './views/pages/customer.edit.html!text';
+import appCustomerListTpl from './views/pages/customer.list.html!text';
+import appCustomerNaviTpl from './views/pages/customer.navi.html!text';
+
+
 export var states = {
   app: {
     url: '',
     abstract: false,
     views: {
       layout: {
-        templateUrl: 'lib/views/layouts/default.html',
+        template: appLayoutTpl,
       },
       'header@app': {
-        templateUrl: 'lib/views/components/header.html'
+        template: appHeaderTpl
       },
       'footer@app': {
-        templateUrl: 'lib/views/components/footer.html'
+        template: appFooterTpl
       },
     },
     data: {
@@ -34,26 +43,18 @@ export var states = {
       'main@app': {
         controller: 'CustomerController',
         controllerAs: 'customerCtrl',
-        templateUrl: 'lib/views/pages/customer.html'
+        template: appCustomerTpl
       }
     },
     data: {
       title: 'Customers'
     }
   },
-  'app.customer.create': {
-    url: '/create',
-    controller: 'CustomerCreateController',
-    controllerAs: 'createCtrl',
-    templateUrl: 'lib/views/modals/customer.create.html',
-    data: {
-      title: 'Customer create'
-    }
-  },
   'app.customer.edit': {
-    url: '/edit/:id',
+    url: '/{id:int}/edit',
     controller: 'CustomerEditController',
-    templateUrl: 'lib/views/modals/customer.edit.html',
+    controllerAs: 'editCtrl',
+    template: appCustomerEditTpl,
     data: {
       title: 'Customer details'
     }
@@ -62,16 +63,16 @@ export var states = {
     url: '/list',
     controller: 'CustomerListController',
     controllerAs: 'listCtrl',
-    templateUrl: 'lib/views/pages/customer.list.html',
+    template: appCustomerListTpl,
     data: {
       title: 'Customers overview'
     }
   },
   'app.customer.navi': {
-    url: '/analytics/:id',
+    url: '/{id:int}/analytics',
     controller: 'CustomerNaviController',
     controllerAs: 'naviCtrl',
-    templateUrl: 'lib/views/pages/customer.navi.html',
+    template: appCustomerNaviTpl,
     data: {
       title: 'Customer analytics'
     }

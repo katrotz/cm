@@ -1,7 +1,7 @@
-<div class="btn-toolbar mb5">
-    <div class="btn-group btn-group-xs">
-        <button class="btn btn-primary">Edit</button>
-        <button class="btn btn-primary" ng-click=customerCtrl.deleteCustomer($row.CustomerID)>Delete</button>
-        <button class="btn btn-success">Navi</button>
+<div class="btn-toolbar mb5 mt5">
+    <div class="btn-group btn-group-sm">
+        <button class="btn btn-primary" ng-click="go('app.customer.edit', {id: $row.CustomerID})">Edit</button>
+        <button class="btn btn-primary" ng-click="go('app.customer.navi', {id: $row.CustomerID})">Navi</button>
+        <button class="btn btn-danger" ng-click=customerCtrl.deleteCustomer($row.CustomerID)>Delete</button>
     </div>
 </div>

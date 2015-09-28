@@ -1,4 +1,8 @@
 'use strict';
+
+import 'styles/main.css!';
+import 'styles/material_dt.css!';
+
 import angular from 'angular';
 import ngApplication from './ng-module.js';
 

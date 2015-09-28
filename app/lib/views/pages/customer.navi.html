@@ -1,1 +1,5 @@
-<div>CUSTOMER NAVI</div>
+<div>
+    <b>Navigation data for <span ng-bind=naviCtrl.customerName></span></b>
+    <dtable options="naviCtrl.dt.options" rows="naviCtrl.analytics" class="material mt10 mb10"></dtable>
+    <a ui-sref="app.customer.list" class="btn btn-sm btn-primary">Back to customer overview</a>
+</div>

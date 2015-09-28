@@ -3,6 +3,7 @@
 let dtOptions = {
   emptyMessage: 'No data found',
   scrollbarV: false,
+  rowHeight: 40,
   columns: [{
     name: 'ID',
     prop: 'CustomerID',
@@ -23,13 +24,12 @@ let dtOptions = {
       let months = (new Date()).getMonth() - (new Date(birthdate)).getMonth();
       let days = (new Date()).getDate() - (new Date(birthdate)).getDate();
 
-      //If during current year we passed birth month or we are currently in
+      //If during current year we passed birth month or we passed the birthdate in the current month
       if (months > 0 || ((months === 0 && days > 0))) {
         years += 1;
       }
 
       return years;
-      //return Math.ceil(Math.abs((new Date()).getTime() - (new Date(birthdate)).getTime()) / (1000 * 3600 * 24 * 31 * 12));
     },
     sortable: false
   }, {
@@ -45,7 +45,7 @@ let dtOptions = {
     prop: 'CustomerLifetimeValue',
     sortable: false
   }, {
-    minWidth: 200,
+    width: 200,
     sortable: false,
     cellRenderer: function(scope, elm) {
       return '<dt-customer-list-actions></dt-customer-list-actions>';
@@ -59,12 +59,11 @@ let dtOptions = {
 export default class CustomerListController{
 
   static get $inject() {
-    return ['$scope', '$modal', '$timeout', 'storage'];
+    return ['$scope', '$timeout', 'storage'];
   }
 
-  constructor($scope, $modal, $timeout, storage) {
+  constructor($scope, $timeout, storage) {
     this.$scope = $scope;
-    this.$modal = $modal;
     this.$timeout = $timeout;
     this.storage = storage;
     this.customers_ = undefined;
