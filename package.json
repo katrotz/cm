@@ -5,7 +5,7 @@
   "main": "app/src/index.js",
   "scripts": {
     "postinstall": "./node_modules/.bin/jspm install",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "karma start karma.conf.js",
     "serve": "npm run unbuild && node ./bin/serve.js",
     "build": "./node_modules/.bin/jspm bundle lib/index app/dist/lib.min.js --inject",
     "unbuild": "./node_modules/.bin/jspm unbundle"
@@ -30,8 +30,17 @@
   },
   "homepage": "https://github.com/katrotz/cm#readme",
   "devDependencies": {
+    "jasmine": "^2.3.2",
+    "jasmine-core": "^2.3.4",
     "jspm": "^0.16.10",
-    "live-server": "^0.8.1"
+    "karma": "^0.13.10",
+    "karma-babel-preprocessor": "^5.2.2",
+    "karma-jasmine": "^0.3.6",
+    "karma-jspm": "^2.0.1",
+    "karma-phantomjs-launcher": "^0.2.1",
+    "karma-phantomjs-shim": "^1.1.1",
+    "live-server": "^0.8.1",
+    "phantomjs": "^1.9.18"
   },
   "jspm": {
     "directories": {

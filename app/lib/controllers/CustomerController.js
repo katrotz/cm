@@ -36,6 +36,7 @@ export default class CustomerController{
   }
 
   loadFixtures_() {
+    this.fixturesLoadIndicator_ = true;
     return this.storage.loadFixtures()
       .then(() => {
         this.fixturesLoadIndicator_ = false;

@@ -5,7 +5,5 @@ export default class NotFoundController{
     return [];
   }
 
-  constructor() {
-    console.log('NotFound');
-  }
+  constructor() {}
 }

@@ -95,11 +95,11 @@ export default class CustomerListController{
   }
 
   onCustomerModified(event) {
-    console.log(event);
+    this.fetchCustomers();
   }
 
   onCustomerDeleted(event, customerIds) {
-    if (!this.customers_ && !this.customers_.length) {
+    if (!this.customers_ || !this.customers_.length) {
       return false;
     }
 
