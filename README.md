@@ -7,7 +7,6 @@
 * [Development](#development)
 * [Testing](#testing)
 
----
 
 
 <a name="installation"></a>
