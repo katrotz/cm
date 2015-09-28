@@ -2,6 +2,10 @@
 
 import template from './pageTitle.html!text';
 
+/**
+ * Page title directive factory
+ * @returns {{scope: boolean, transclude: boolean, template, controllerAs: string, controller: *[]}}
+ */
 export default function pageTitle() {
   return {
     scope: false,

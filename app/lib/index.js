@@ -8,6 +8,10 @@ import ngApplication from './ng-module.js';
 
 export default ngApplication;
 
+/**
+ * Bootstrap the application on demand
+ * @returns {Promise}
+ */
 export function bootstrap() {
   return new Promise((resolve) => {
     angular.element(document).ready(() => {

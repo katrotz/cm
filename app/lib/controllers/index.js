@@ -8,6 +8,11 @@ import CustomerEditController from './Customer/CustomerEditController.js';
 import CustomerListController from './Customer/CustomerListController.js';
 import CustomerNaviController from './Customer/CustomerNaviController.js';
 
+/**
+ * Register ng application controllers
+ * @param ngApplication
+ * @returns {*}
+ */
 export default function registerControllers(ngApplication) {
   return ngApplication
     .controller('HomeController', HomeController)

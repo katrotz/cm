@@ -14,6 +14,9 @@ import runCallback from './ng-run.js';
 
 export var applicationName = 'cm';
 
+/**
+ * Define ng application
+ */
 var ngApplication = angular.module(applicationName, [
     'ngSanitize',
     'ui.router',
@@ -23,6 +26,9 @@ var ngApplication = angular.module(applicationName, [
   .config(configCallback)
   .run(runCallback);
 
+/**
+ * Register application components
+ */
 registerControllers(ngApplication);
 registerDirectives(ngApplication);
 registerFilters(ngApplication);

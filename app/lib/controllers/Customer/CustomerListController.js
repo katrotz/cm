@@ -1,5 +1,9 @@
 'use strict';
 
+/**
+ * Angular data table configurations
+ * @type {{emptyMessage: string, scrollbarV: boolean, rowHeight: number, columns: *[]}}
+ */
 let dtOptions = {
   emptyMessage: 'No data found',
   scrollbarV: false,
@@ -56,12 +60,28 @@ let dtOptions = {
   }]
 };
 
+/**
+ * List customers page
+ * @constructor
+ * @property {undefined|*|Array} customers - list of fetched customers
+ */
 export default class CustomerListController{
 
+  /**
+   * $inject
+   * @static
+   * @returns {string[]}
+   */
   static get $inject() {
     return ['$scope', '$timeout', 'storage'];
   }
 
+  /**
+   * Constructor
+   * @param $scope
+   * @param $timeout
+   * @param storage
+   */
   constructor($scope, $timeout, storage) {
     this.$scope = $scope;
     this.$timeout = $timeout;
@@ -82,6 +102,10 @@ export default class CustomerListController{
     return this.customers_;
   }
 
+  /**
+   * Fetch customers
+   * @returns {*}
+   */
   fetchCustomers() {
     return this.storage.list('customers').then(data => {
       this.customers_ = data;
@@ -90,14 +114,30 @@ export default class CustomerListController{
     });
   }
 
-  onCustomerCreated(event, customerIds) {
+  /**
+   * On customer created callback
+   * @param event
+   * @param customerIds
+   */
+  onCustomerCreated() {
     this.fetchCustomers();
   }
 
-  onCustomerModified(event) {
+  /**
+   * On customer modified callback
+   * @param event
+   * @param customerIds
+   */
+  onCustomerModified() {
     this.fetchCustomers();
   }
 
+  /**
+   * On customer deleted callback
+   * @param event
+   * @param customerIds
+   * @returns {boolean}
+   */
   onCustomerDeleted(event, customerIds) {
     if (!this.customers_ || !this.customers_.length) {
       return false;

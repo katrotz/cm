@@ -1,5 +1,9 @@
 'use strict';
 
+/**
+ * Angular data table configurations
+ * @type {{emptyMessage: string, scrollbarV: boolean, columns: *[]}}
+ */
 let dtOptions = {
   emptyMessage: 'No data found',
   scrollbarV: false,
@@ -13,6 +17,13 @@ let dtOptions = {
 };
 
 
+/**
+ * Display customer analytics data
+ * @constructor
+ * @property {undefined|*|Array} analytics - customers analytics data
+ * @property {*} customer - customers data
+ * @property {*} customerName - customers full name
+ */
 export default class CustomerNaviController{
   static get $inject() {
     return ['$stateParams', 'storage'];
@@ -47,6 +58,10 @@ export default class CustomerNaviController{
     return this.customer_.FirstName + ' ' + this.customer_.LastName;
   }
 
+  /**
+   * Fetch customer data
+   * @returns {*}
+   */
   fetchCustomer() {
     let customerId = this.$stateParams.id;
 
@@ -55,6 +70,10 @@ export default class CustomerNaviController{
     });
   }
 
+  /**
+   * Fetch analytics data
+   * @returns {*}
+   */
   fetchAnalytics() {
     let customerId = this.$stateParams.id;
 

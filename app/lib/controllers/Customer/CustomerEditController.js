@@ -1,10 +1,26 @@
 'use strict';
 
+/**
+ * Edict customer page
+ * @constructor
+ */
 export default class CustomerEditController{
+  /**
+   * $inject
+   * @static
+   * @returns {string[]}
+   */
   static get $inject() {
     return ['$state', '$stateParams', '$filter', 'storage'];
   }
 
+  /**
+   * Constructor
+   * @param $state
+   * @param $stateParams
+   * @param $filter
+   * @param storage
+   */
   constructor($state, $stateParams, $filter, storage) {
     this.$filter = $filter;
     this.$state = $state;
@@ -16,6 +32,10 @@ export default class CustomerEditController{
     this.fetch();
   }
 
+  /**
+   * Fetch the customer
+   * @returns {*}
+   */
   fetch() {
     let customerID = this.$stateParams.id;
 
@@ -24,6 +44,10 @@ export default class CustomerEditController{
     });
   }
 
+  /**
+   * Store the customer
+   * @param form
+   */
   save(form) {
     if (form.$valid) {
       this.busy = true;

@@ -2,11 +2,29 @@
 
 import createCustomerTpl from 'lib/views/modals/customer.create.html!text';
 
+/**
+ * Customer namespace controller
+ * @constructor
+ * @property {*} fixtures - fixtures handler
+ * @property {Boolean} fixtures.busy - fixtures loading indicator
+ * @property {Function} fixtures.load - fixtures loader
+ */
 export default class CustomerController{
+  /**
+   * $inject
+   * @static
+   * @returns {string[]}
+   */
   static get $inject() {
     return ['$scope', '$modal', 'storage'];
   }
 
+  /**
+   * Constructor
+   * @param $scope
+   * @param $modal
+   * @param storage
+   */
   constructor($scope, $modal, storage) {
     this.$scope = $scope;
     this.$modal = $modal;
@@ -23,6 +41,9 @@ export default class CustomerController{
     };
   }
 
+  /**
+   * Show create customer modal
+   */
   showCreateCustomerModal() {
     this.$modal.open({
       template: createCustomerTpl,
@@ -31,10 +52,20 @@ export default class CustomerController{
     });
   }
 
+  /**
+   * Delete customer
+   * @param id
+   * @returns {*}
+   */
   deleteCustomer(id) {
     return this.storage.remove('customers', id);
   }
 
+  /**
+   * Load fixtures
+   * @returns {*}
+   * @private
+   */
   loadFixtures_() {
     this.fixturesLoadIndicator_ = true;
     return this.storage.loadFixtures()

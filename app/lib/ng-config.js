@@ -1,5 +1,7 @@
 'use strict';
-
+/**
+ * Load templates vs referencing templateUrls - these will be bundled by JSPM and cached on client side
+ */
 import appLayoutTpl from './views/layouts/default.html!text';
 import appHeaderTpl from './views/components/header.html!text';
 import appFooterTpl from './views/components/footer.html!text';
@@ -8,7 +10,10 @@ import appCustomerEditTpl from './views/pages/customer.edit.html!text';
 import appCustomerListTpl from './views/pages/customer.list.html!text';
 import appCustomerNaviTpl from './views/pages/customer.navi.html!text';
 
-
+/**
+ * Define application wide UI router states
+ * @type {*}
+ */
 export var states = {
   app: {
     url: '',
@@ -79,6 +84,9 @@ export var states = {
   },
 };
 
+/**
+ * Ng application configuration
+ */
 export default ['$stateProvider', '$locationProvider', '$urlRouterProvider',
   function config($stateProvider, $locationProvider, $urlRouterProvider) {
     let stateNames = Object.keys(states);

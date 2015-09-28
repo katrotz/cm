@@ -1,6 +1,15 @@
 'use strict';
 
+/**
+ * Create customer modal
+ * @constructor
+ */
 export default class CustomerCreateController{
+  /**
+   * $inject
+   * @static
+   * @returns {string[]}
+   */
   static get $inject() {
     return [
       '$modalInstance',
@@ -9,6 +18,12 @@ export default class CustomerCreateController{
     ];
   }
 
+  /**
+   * Constructor
+   * @param $modalInstance
+   * @param $filter
+   * @param storage
+   */
   constructor($modalInstance, $filter, storage) {
     this.$modalInstance = $modalInstance;
     this.$filter = $filter;
@@ -17,6 +32,10 @@ export default class CustomerCreateController{
     this.busy = false;
   }
 
+  /**
+   * Store the customer and close the modal
+   * @param form
+   */
   save(form) {
     if (form.$valid) {
       this.busy = true;
@@ -29,6 +48,9 @@ export default class CustomerCreateController{
     }
   }
 
+  /**
+   * Close the modal
+   */
   cancel() {
     this.$modalInstance.dismiss('cancel');
   }
