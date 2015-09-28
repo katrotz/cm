@@ -2,7 +2,6 @@
 
 > CM is an application based on [angularJS](https://angularjs.org/) framework and [Dexie](http://www.dexie.org) IndexedDB wrapper
 
----
 
 * [Installation](#installation)
 * [Development](#development)
