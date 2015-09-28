@@ -39,6 +39,7 @@
     "karma-jspm": "^2.0.1",
     "karma-phantomjs-launcher": "^0.2.1",
     "karma-phantomjs-shim": "^1.1.1",
+    "karma-verbose-reporter": "0.0.3",
     "live-server": "^0.8.1",
     "phantomjs": "^1.9.18"
   },
