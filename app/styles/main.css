@@ -100,13 +100,26 @@ footer ul{
   margin-top: 5px;
 }
 
+.sort-btn.sort-asc:after,
 .sort-btn.sort-desc:after{
-  content: "up"
+    content: ' ';
+    position: relative;
+    left: 5px;
+    border: 5px solid transparent;
+}
+.sort-btn.sort-asc:after{
+    top: 13px;
+    border-top-color: silver;
+}
+.sort-btn.sort-desc:after{
+    bottom: 10px;
+    border-bottom-color: silver;
 }
 
-.sort-btn.sort-asc:after{
-  content: "down"
-}
+
+
+
+
 
 .error-wrapper {
     color: #d9534f;
